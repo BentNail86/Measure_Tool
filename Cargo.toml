@@ -1,0 +1,13 @@
+[package]
+name = "MeasureTool"
+version = "0.1.0"
+edition = "2021"  # Note: 2024 isn't valid, use 2021
+
+[dependencies]
+axum = "0.7"  # Web Framework
+tokio = { version = "1", features = ["full"] }  # Async Runtime
+serde = { version = "1.0", features = ["derive"] }  # JSON serialization/deserialization
+serde_json = "1.0"  # More JSON tools
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite"] }  # Database Library with SQLite support
+tower = "0.4"  # Additional tower utilities
+tower-http = { version = "0.5", features = ["cors"] }  # CORS support so React Native can call the API
